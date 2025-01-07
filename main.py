@@ -1,9 +1,6 @@
-book_path = "books/frankenstein.txt"
-
 def main():
-    with open(book_path) as f:
-        file_contents = f.read()
-    
+    book_path = "books/frankenstein.txt"
+    file_contents = get_text(book_path)
     wordlist = file_contents.split()
     words = wordcount(wordlist)
     characters = charactercount(file_contents)
@@ -13,6 +10,10 @@ def main():
     for char_info in characters:
         print(f"The {char_info['char']} character was found {char_info['num']} times")
     print("--- End report ---")    
+
+def get_text(path):
+    with open(path) as f:
+        return f.read()
 
 def wordcount(text):
     return len(text)
