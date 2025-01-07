@@ -23,8 +23,6 @@ def charactercount(text):
     count = 0
     character_count = dict.fromkeys(characters, 0)
 
-    print(type(lowered_text))
-
     for character in characters:
         count = lowered_text.count(character)
         character_count[character] = count
