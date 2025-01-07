@@ -1,5 +1,5 @@
 def main():
-    book_path = "books/frankenstein.txt"
+    book_path = input("Please enter location of book -- eg books/frankenstein.txt :")
     file_contents = get_text(book_path)
     wordlist = file_contents.split()
     words = wordcount(wordlist)
