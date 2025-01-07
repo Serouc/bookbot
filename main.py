@@ -13,8 +13,9 @@ def wordcount(text):
 def charactercount(text):
     lowered_text = text.lower()
     characters = set(lowered_text)
+    sorted_characters = sorted(characters)
     count = 0
-    output = dict.fromkeys(characters, 0)
+    output = dict.fromkeys(sorted_characters, 0)
     
     for character in characters:
         count = lowered_text.count(character)
