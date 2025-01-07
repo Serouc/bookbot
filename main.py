@@ -11,17 +11,19 @@ def main():
     print(f"--- Begin report of {book_path} ---")
     print(f"{words} words found in the document")
     for char_info in characters:
-        print(f"The {repr(char_info['char'])} character was found {char_info['num']} times")
+        print(f"The {char_info['char']} character was found {char_info['num']} times")
     print("--- End report ---")    
 
 def wordcount(text):
     return len(text)
 
 def charactercount(text):
-    lowered_text = text.lower()
+    lowered_text = "".join(char for char in text.lower() if char.isalpha())
     characters = set(lowered_text)
     count = 0
     character_count = dict.fromkeys(characters, 0)
+
+    print(type(lowered_text))
 
     for character in characters:
         count = lowered_text.count(character)
